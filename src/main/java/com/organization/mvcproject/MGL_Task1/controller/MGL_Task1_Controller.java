@@ -1,5 +1,6 @@
 package com.organization.mvcproject.MGL_Task1.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +16,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.organization.mvcproject.MGL_Task1.model.Game;
 import com.organization.mvcproject.MGL_Task1.model.Review;
-import com.organization.mvcproject.MGL_Task1.service.Game_Service;
+import com.organization.mvcproject.MGL_Task1.service.GameService;
 
 
 @Controller
 public class MGL_Task1_Controller {
 
 	@Autowired
-	private Game_Service javaGameService;
+	private GameService javaGameService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
@@ -48,8 +49,8 @@ public class MGL_Task1_Controller {
 	}
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
-	public ResponseEntity<List<Game>> fetchAllGames() {
-		return new ResponseEntity<List<Game>>(javaGameService.retrieveAllGames(), HttpStatus.OK);
+	public ResponseEntity<ArrayList<Game>> fetchAllGames() {
+		return new ResponseEntity<ArrayList<Game>>(javaGameService.retrieveAllGames(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/createGame", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
