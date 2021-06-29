@@ -1,7 +1,6 @@
 package com.organization.mvcproject.MGL_Task1.controller;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -49,8 +48,8 @@ public class MGL_Task1_Controller {
 	}
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
-	public ResponseEntity<ArrayList<Game>> fetchAllGames() {
-		return new ResponseEntity<ArrayList<Game>>(javaGameService.retrieveAllGames(), HttpStatus.OK);
+	public ResponseEntity<?> fetchAllGames() {
+		return new ResponseEntity<>(javaGameService.retrieveAllGames(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/createGame", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)

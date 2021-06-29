@@ -1,8 +1,8 @@
-package com.organizatoin.mvproject.dao;
+package com.organization.mvcproject.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.organization.mvcproject.MGL_Task1.model.Game;
@@ -12,14 +12,14 @@ public class MockDAO{
 		
 
 		private static Long gameId = new Long(0);
-		@Autowired
-		private static ArrayList<Game> games = new ArrayList<Game>();
+		
+		private static List<Game> games = new ArrayList<Game>();
 
 		static {
 			games = populateGames();
 		}
 
-	private static ArrayList<Game> populateGames() {
+	private static List<Game> populateGames() {
 
 			Game game1 = new Game();
 			game1.setGameID(++gameId);
@@ -44,9 +44,7 @@ public class MockDAO{
 		}
 
 		
-
-
-		public ArrayList<Game> retrieveAllGames() {
+		public List<Game> retrieveAllGames() {
 			return games;
 		}
 		
@@ -60,9 +58,9 @@ public class MockDAO{
 						
 						
 						for(int i = 0; i <games.size();i++) {
-							Game currentGame = games.get(i);
+							Game currentGames = games.get(i);
 							
-							if(game.getGameId().equals(currentGame.getGameId())) {
+							if(game.getGameId().equals(currentGames.getGameId())) {
 								return games.set(i,game);
 							}
 						}
