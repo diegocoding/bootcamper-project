@@ -44,7 +44,7 @@
                             <div class="form-group col-md-12">
                                 <label class="col-md-2 control-lable text-light" for="gameName">Name*</label>
                                 <div class="col-md-7">
-                                    <input type="text" ng-model="MGL_T1_ctrl.game.gameName" id="gameName" class="gameName form-control input-sm" placeholder="Enter the name of the new game [required]" required ng-minlength="3" />
+                                    <input type="text" ng-model="MGL_T1_ctrl.game.gameName" id="gameName" class="gameName form-control input-sm" placeholder="Enter the name of the new game or Edit the game" required ng-minlength="3" />
                                     <div class="has-error" ng-show="gameForm.$dirty">
                                         <span ng-show="gameForm.gameName.$error.required">This is a required field</span>
                                         <span ng-show="gameForm.gameName.$error.minlength">Minimum length required is 3</span>
@@ -66,7 +66,9 @@
 
                         <div class="row">
                             <div class="form-actions floatRight">
+                            
                                 <input type="submit" value="Add" class="btn btn-primary btn-sm">
+                                
                             </div>
                         </div>
                     </form>
@@ -81,14 +83,19 @@
                             <tr>
                                 <th>Game Name</th>
                                 <th>Game Genre</th>
-                                <th width="20%"></th>
+                                <th>Edit/Delete</th>
+                                <th width="10%"></th>
                             </tr>
                         </thead>
                         <tbody>
+                        </div>
                             <tr ng-repeat="currentGame in MGL_T1_ctrl.games">
                                 <td><span ng-bind="currentGame.gameName"></span></td>
                                 <td><span ng-bind="currentGame.gameGenre"></span></td>
                                 <td>
+                                 <input type="submit" value="Delete" class="btn btn-primary btn-sm">
+                                 <input type="submit" value="Edit" class="btn btn-primary btn-sm">
+                        
                                 </td>
                             </tr>
                         </tbody>
