@@ -76,6 +76,8 @@
             </div>
             <div class="panel panel-default">
                 <!-- Default panel contents -->
+                
+                
                 <div class="panel-heading text-light"><span class="lead">List of all current games</span></div>
                 <div class="tablecontainer">
                     <table class="table table-dark table-striped text-light">
@@ -89,9 +91,12 @@
                         </thead>
                         <tbody>
                         </div>
-                            <tr ng-repeat="currentGame in MGL_T1_ctrl.games">
+                        <!-- Filtering by Genre-->
+                        
+                            <tr ng-repeat="currentGame in MGL_T1_ctrl.games | orderBy:'gameName'">
                                 <td><span ng-bind="currentGame.gameName"></span></td>
                                 <td><span ng-bind="currentGame.gameGenre"></span></td>
+                      
                                 <td>
                                  <input type="submit" value="Delete" class="btn btn-primary btn-sm">
                                  <input type="submit" value="Edit" class="btn btn-primary btn-sm">

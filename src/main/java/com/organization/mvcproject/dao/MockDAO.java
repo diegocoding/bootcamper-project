@@ -1,14 +1,18 @@
 package com.organization.mvcproject.dao;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
 import com.organization.mvcproject.MGL_Task1.model.Game;
+import com.organization.mvcproject.api.dao.GameMockDAO;
+
 
 @Repository
-public class MockDAO{
+public class MockDAO implements GameMockDAO{
 		
 
 		private static Long gameId = new Long(0);

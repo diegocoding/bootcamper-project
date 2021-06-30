@@ -30,10 +30,8 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <img src="resources/static/images/android-chrome-512x512.png" width="1100" height="500" alt="">
-            </div>
-        </div>
+           <img src="resources/static/images/android-chrome-512x512.png" width="1100" height="500" alt="">
+    	</div>
     </div>
 </body>
 

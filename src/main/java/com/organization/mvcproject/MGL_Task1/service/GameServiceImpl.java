@@ -1,50 +1,47 @@
 package com.organization.mvcproject.MGL_Task1.service;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.organization.mvcproject.MGL_Task1.model.Game;
+import com.organization.mvcproject.api.service.GameService;
 import com.organization.mvcproject.dao.MockDAO;
 
-
-
-
 @Service("javaGameService")
-public class GameServiceImpl implements GameService {
+public class GameServiceImpl implements GameService
+{
+@Autowired
+private MockDAO mockDao;
 
-	@Autowired
-	private MockDAO mockDao;  
-	
+@Override
+public List<Game> retrieveAllGames() {
 
-	@Override
-	public List<Game> retrieveAllGames() {
-		return mockDao.retrieveAllGames();
-	}
-	
-	
-	public Game findGameById(Long id) {
-		return mockDao.findGameById(id);
-	}
-	
 
-	
-	public boolean deleteGame(Long id) {
-		return mockDao.deleteGame(id);
-		
-	}
-	
-	@Override
-	public Game saveGame(Game game) {
-		return mockDao.saveGame(game);
-	}
-
-	
-	
+return mockDao.retrieveAllGames();
 }
-	
-	
-	
 
 
+
+@Override
+public Game saveGame(Game game) {
+return mockDao.saveGame(game) ;
+}
+public Game findGameById(Long id)
+{
+
+
+
+return mockDao.findGameById(id);
+
+
+
+}
+@Override
+
+public boolean deleteGame(Long id)
+{
+return mockDao.deleteGame(id);
+
+}
+}
